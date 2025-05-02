@@ -1,21 +1,21 @@
-// Select the container with the class "reset"
+const gridContainer = document.querySelector('#grid-container');
 const resetButton = document.querySelector('#reset');
 
-const gridContainer = document.querySelector('#grid-container');
+resetButton.addEventListener('click', () => {
+    gridContainer.innerHTML = '';
+    createGrid();
+});
 
-function creatGrid() {
-    let div = document.createElement('div');
-    div.classList.add('square');
-    gridContainer.appendChild(div);
+
+function createGrid() {
     for (let i = 0; i < 256; i++) {
         let div = document.createElement('div');
         div.classList.add('square');
+        div.addEventListener('click', () => {
+            div.style.backgroundColor = 'black';
+        });
         gridContainer.appendChild(div);
     }
 }
 
-creatGrid();
-
-document.addEventListener('DOMContentLoaded', () => {
-    creatGrid();
-});
+createGrid();

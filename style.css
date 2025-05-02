@@ -21,4 +21,10 @@ Make the container fixed width and square (e.g. 500px x 500px)
     height: 100%;
     border: 1px solid red;
     box-sizing: border-box;
+    
 }
+
+.square:hover {
+    background-color: black;
+  }
+  
