@@ -12,8 +12,8 @@ createNewGrid(newSize)
 });
 
 function createNewGrid(newSize) {
-    gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
-    gridContainer.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+    gridContainer.style.gridTemplateColumns = `repeat(${newSize}, 1fr)`;
+    gridContainer.style.gridTemplateRows = `repeat(${newSize}, 1fr)`;
 
     for (let i = 0; i < newSize * newSize; i++) {
         let div = document.createElement('div');
@@ -29,6 +29,8 @@ function createNewGrid(newSize) {
 
 function createGrid() {
     
+    gridContainer.style.gridTemplateColumns = `repeat(${newSize}, 1fr)`;
+    gridContainer.style.gridTemplateRows = `repeat(${newSize}, 1fr)`;
     for (let i = 0; i < 256; i++) {
         let div = document.createElement('div');
         div.classList.add('square');
@@ -40,3 +42,6 @@ function createGrid() {
 }
 
 createGrid();
+
+
+
