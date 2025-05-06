@@ -14,7 +14,7 @@ A digital Etch-a-Sketch built with **JavaScript**, **HTML**, and **CSS**. Move y
 3. Click the **Reset** button to start over with a new grid size.
 
 
-## Extra Credit Ideas (optional)
+## Extra Credit Ideas (optional)    
 - Add rainbow colors
 - Make squares get progressively darker on each hover
 - Add a "clear" button or color picker

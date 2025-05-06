@@ -25,23 +25,45 @@ function createNewGrid(newSize) {
     }
 }
 
+createNewGrid(16);
 
 
-function createGrid() {
-    
-    gridContainer.style.gridTemplateColumns = `repeat(${newSize}, 1fr)`;
-    gridContainer.style.gridTemplateRows = `repeat(${newSize}, 1fr)`;
-    for (let i = 0; i < 256; i++) {
-        let div = document.createElement('div');
-        div.classList.add('square');
-        div.addEventListener('mouseover', () => {
-            div.style.backgroundColor = 'black';
+
+function black() {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+            square.style.backgroundColor = 'black';
         });
-        gridContainer.appendChild(div);
-    }
+    });
+    
 }
 
-createGrid();
+// select the button
 
+const blackButton = document.querySelector('#fillAll');
 
+blackButton.addEventListener('click', () => {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        square.style.backgroundColor = 'black';
+    });
+})
+
+const randomButton = document.querySelector('#randomAll');
+randomButton.addEventListener('click', () => {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        square.style.backgroundColor = randomColor();
+    });
+})
+
+let randomColor = () => {
+let letters = '0123456789ABCDEF';
+let color = '#';
+for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+}
+return color;
+}
 
